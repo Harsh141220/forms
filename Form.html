@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container mt-3 mb-5">
+        <div class='row mt-5 mb-5 shadow'>
+            <div class='col-lg-6 shadow p-5'>
+                <h3>Hiring</h3><br><br>
+                <form action="super" autocapitalize="off">       
+                    <div class="form-group">
+                        <label>Upload your CV:</label><br>
+                        <input type="file" id="file" required></div>      
+                        <div class="form-group">
+                            <label >Name</label>
+                            <input type="text" class="form-control" id="name"required>
+                          </div>
+                          <div class="form-group">
+                            <label >University Website</label>
+                            <input type="website" class="form-control" id="uw" required>
+                          </div>
+                          <div class="form-group" style="float:left">
+                            <label >Start Date</label>
+                            <input type="date" id="dates" name="date" class="form-control" required>
+                          </div>
+                          <div class="form-group" style="margin-left:10%;float:left">
+                            <label >End Date</label>
+                            <input type="date" id="datee" name="date" class="form-control" required>
+                          </div>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <h6>Skills: </h6>
+
+                    <div class="from-group">
+                        <input type="checkbox" id="1" name="1" value="HTML">
+                        <label for="1"> HTML</label><br>
+                        <input type="checkbox" id="1" name="1" value="CSS">
+                        <label for="1"> CSS</label><br>
+                        <input type="checkbox" id="1" name="1" value="JS">
+                        <label for="1"> JS</label><br>
+                        <input type="checkbox" id="1" name="1" value="Ang">
+                        <label for="1"> Angular</label><br>
+                        <input type="checkbox" id="1" name="1" value="Dj">
+                        <label for="1"> Django</label><br>
+                        <input type="checkbox" id="1" name="1" value="Fl">
+                        <label for="1"> Flask</label><br>
+                        
+                        
+                        
+                        
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label >Expected Salary(INR)</label>
+                        <input type="number" class="form-control" id="exp" required>
+                      </div>
+                    <br>
+                    <div class="form-group">
+                        <label >Notice period(days)</label>
+                        <input type="number" class="form-control" id="np" required>
+                      </div>
+                    <br><br>
+                    <h6>Employement Status: </h6>
+                          
+                    
+                   
+                    <div class="form-group">
+                        <input type="radio" id="rd1" name="rd" onclick="working()">
+                        <label for="rd1">Working</label><br>
+                        <input type="radio" id="rd2" name="rd" onclick="working()">
+                        <label for="rd2">Un-employeed</label>
+                    </div>
+                        
+                      <div class="form-group" id="hidden" style='visibility:hidden'>
+                        <label>Select Company Website: </label><br>
+                            <input list="website">
+                            <datalist id="website">
+                            <option value="Google.com">
+                            <option value="Amazon.com">
+                            <option value="Apple.co.in">
+                            <option value="Facebook.com">
+                        </datalist>
+                    </div>
+                    <div class="form-group" id="hidden2" style='visibility:hidden'>
+                        <label >Current Salary(INR)</label>
+                        <input type="number" class="form-control">
+                      </div>
+                      <br>
+                      <button style="margin-left:50%;float:left" class="btn btn-primary"type="submit" onclick="formcheck()">Submit</button>
+                    
+                    </form>
+            </div>
+           
+        </div>
+    </div>
+    <p id="demo"></p>
+    <script>
+        function working(){
+            if(document.getElementById('rd1').checked) {   
+                document.getElementById('hidden').style.visibility = 'visible';      
+                document.getElementById('hidden2').style.visibility = 'visible';      
+
+        }else{  
+            document.getElementById('hidden').style.visibility = 'hidden';
+            document.getElementById('hidden2').style.visibility = 'hidden';      
+      
+
+    }}
+    function formcheck() {
+        if (document.getElementById("file").checkValidity() && document.getElementById("name").checkValidity() && document.getElementById("uw").checkValidity() && document.getElementById("dates").checkValidity() && document.getElementById("datee").checkValidity() && document.getElementById("exp").checkValidity() && document.getElementById("np").checkValidity()) {
+            if(document.getElementById("rd1").checkValidity() || document.getElementById("rd2").checkValidity())
+            alert("Submitted Succesfully")
+        }
+      }
+    </script>
+</body>
+</html>
